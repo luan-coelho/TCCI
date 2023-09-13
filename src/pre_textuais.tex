@@ -1,0 +1,136 @@
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+% \pretextual
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% (o * indica que haverá a ficha bibliográfica)
+% ---
+\imprimirfolhaderosto
+% ---
+
+% ---
+% Inserir folha de aprovação
+% ---
+
+% Isto é um exemplo de Folha de aprovação, elemento obrigatório da NBR
+% 14724/2011 (seção 4.2.1.3). Você pode utilizar este modelo até a aprovação
+% do trabalho. Após isso, substitua todo o conteúdo deste arquivo por uma
+% imagem da página assinada pela banca com o comando abaixo:
+%
+% \includepdf{folhadeaprovacao_final.pdf}
+%
+\begin{folhadeaprovacao}
+
+  	
+  	
+  	\begin{center}
+  		\includegraphics[width=1\textwidth]{imagens/unitins.png}
+  		\ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{\c{C}}{\~{A}}O
+  		
+  		\par
+  		\vspace*{1cm}     
+  		{\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{1cm}    }
+  		\par
+  		{\large \expandafter\MakeUppercase{\imprimirautor}}
+  		%\vspace*{\fill}
+  		\par
+  		\vspace*{1cm}     
+  		\hspace{.45\textwidth}
+  		\begin{minipage}{.5\textwidth}
+  			\small\imprimirpreambulo
+  			
+  		\end{minipage}%
+  	%	\vspace*{\fill}
+  	\end{center}
+  
+        
+  \assinatura{\textbf{Estagiário (a)}}
+  \assinatura{\textbf{Supervisor (a) da Concedente ou Responsável pela Supervisão no Laboratório}}
+   \assinatura{\textbf{\imprimirorientador} \\ Orientador} 
+   
+   
+      
+   \begin{center}
+    \vspace*{0.5cm}
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+  \end{center}
+  
+\end{folhadeaprovacao}
+
+
+% ---
+% RESUMOS
+% ---
+
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+
+
+
+ \textbf{Palavras-chaves}: 
+ 
+\end{resumo}
+
+% resumo em inglês
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+ 
+   \vspace{\onelineskip}
+ 
+   \noindent 
+   \textbf{Key-words}:
+ \end{otherlanguage*}
+\end{resumo}
+
+
+% ---
+% inserir lista de ilustrações
+% ---
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+
+% ---
+
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\begin{siglas}
+\item API - \textit{Application Programming Interface}
+\item HTTP - \textit{Hypertext Transfer Protocol}
+\item JSON - \textit{JavaScript Object Notation}
+\item OEM - \textit{Original Equipment Manufacturer}
+\item REST - \textit{Representational State Transfer Protocol}
+\item SDK - \textit{Software Development Kit}
+\item  SOAP - \textit{Simple Object Access Protocol}
+\item SO - Sistema Operacional
+\item WSDL - \textit{Web Services Description Language}
+\item XML - \textit{Extensible Markup Language}
+  
+  
+  
+\end{siglas}
+% ---
+
+
+% ---
+% inserir o sumario
+% ---
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+% ---
+
