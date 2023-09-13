@@ -5,6 +5,7 @@
 
 \chapter{Referencial Teórico}\label{ch:referencial_teorico}
 
+
 \section{Aplicações Móveis}\label{sec:aplicacoes-moveis}
 Uma aplicação móvel, ou aplicativo móvel, é um software computacional desenvolvido para ser executado em um dispositivo móvel, como telefones celular e \textit{tablets}~\cite{clow2019flutter}.
 
@@ -18,11 +19,12 @@ Um dos obstáculos enfrentados é o valor final investido para que o processo de
 Foi partindo destes problemas que as tecnologias de desenvolvimento híbrido surgiram.
 Motivos como a necessidade de desenvolver apenas um código, sem precisar se preocupar em manter duas equipes de desenvolvimento nativo, visando a melhor utilização do tempo e até economia de capital\cite{yatsenko2019comparative}{}.
 
+
 \section{Aplicações Nativas vs. Híbridas}\label{sec:aplicacoes-nativas-vs.-hibridas}
 Aplicações nativas são aplicações escritas tendo em vista a execução em apenas um sistema operacional\cite{clow2019flutter}.
 Sendo assim, caso seja necessário desenvolver a mesma aplicação para Android e iOS, será preciso alocar duas equipes diferentes, com requisitos computacionais diferentes e habilidades distintas, para escrever e manter a aplicação em ambos SOs.
 
-Para os dois sistemas operacionais mais utilizados, aqui abordados, as linguagens de programação para desenvolvimento nativo de aplicações  são Java \footnote{https://developer.android.com/docs} e Kotlin \footnote{https://developer.android.com/kotlin} para Android, e Objective-C \footnote{https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ \newline ProgrammingWithObjectiveC/Introduction/Introduction.html} e Swift \footnote{https://developer.apple.com/swift/} para iOS\@.
+Para os dois sistemas operacionais mais utilizados, aqui abordados, as linguagens de programação para desenvolvimento nativo de aplicações são Java \footnote{https://developer.android.com/docs} e Kotlin \footnote{https://developer.android.com/kotlin} para Android, e Objective-C \footnote{https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ \newline ProgrammingWithObjectiveC/Introduction/Introduction.html} e Swift \footnote{https://developer.apple.com/swift/} para iOS\@.
 
 
 Para se desenvolver aplicações nativas para iOS é preciso utilizar o programa XCode \footnote{https://developer.apple.com/xcode/} que apenas está disponível em computadores com sistema operacional Mac OS instalado\cite{goadrich2011smart}.
@@ -51,6 +53,7 @@ As abordagens de desenvolvimento atualmente utilizadas e disputam entre si são 
 Estes dois frameworks trabalham com o suporte ao paradigma de programação reativa.
 Ou seja, são ferramentas que se propõe a lidar com a mudança de estados dos componentes gerada pela atualização de dados\cite{lima2019avaliacao}.
 
+
 \section{React Native}\label{sec:react-native}
 
 React Native é uma combinação de desenvolvimento nativo com React, uma biblioteca JavaScript para construção de interfaces de usuário.
@@ -73,6 +76,7 @@ Os componentes nativos iOS e Android são controlados pelos códigos em JavaScri
 
 A Figura~\ref{fig: Interação React Native SO} apresenta a interação entre componentes nativos e o código em JavaScript.
 Há uma ponte entre o código e os componentes visuais nativos (Widgets OEM), resultando em uma interface de usuário construída com a aparência visual dos componentes nativos.
+
 
 \section{Flutter}\label{sec:flutter}
 
@@ -118,7 +122,6 @@ E a segunda maneira é \textit{Ahead-Of-Time}, que ocorre quando a Máquina Virt
 Este tipo de execução ocorre quando a aplicação é lançada para utilização nas lojas de aplicativo, como Google Play e App Store~\cite{napoli2019beginning}.
 
 
-
 \section{Web Services}\label{sec:web-services}
 
 
@@ -158,8 +161,6 @@ Como anteriormente mencionado, e exemplificado na Figura~\ref{fig: REST}, a simp
 Portanto, ao se planejar o desenvolvimento de uma aplicação móvel que necessita consumir dados de integração de sistemas, é preciso definir um padrão de Web Service a ser utilizado.
 De acordo com~\cite{tihomirovs2016webservices}, aplicações que utilizam REST são as que demandam maior performance, escalabilidade e compatibilidade.
 Enquanto as que utilizam o padrão SOAP, são projetos que exigem maior nível de segurança e confiabilidade como aplicações bancárias e sistemas de pagamento.
-
-
 
 
 \section{Considerações Finais}\label{sec:consideracoes-finais}

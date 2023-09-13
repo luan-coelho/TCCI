@@ -24,28 +24,28 @@
 
 % alterando a capa
 \renewcommand{\imprimircapa}{%
-  \begin{capa}%
-    
-    \center
-    \includegraphics[width=1\textwidth]{imagens/unitins}
-    \ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{Ç}{Ã}O
+    \begin{capa}%
 
-	\vspace*{2cm}     
-    {\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{2cm}    }
+        \center
+        \includegraphics[width=1\textwidth]{imagens/unitins}
+        \ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{Ç}{Ã}O
 
-    {\large \expandafter\MakeUppercase{\imprimirautor}}
-    \vspace*{\fill}
-    
-    
-   {\large\imprimirlocal}
-   
+        \vspace*{2cm}
+        {\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{2cm}    }
 
-   
-   {\large\imprimirdata}
-   \vspace*{1cm}
-    
-  
-  \end{capa}
+        {\large \expandafter\MakeUppercase{\imprimirautor}}
+        \vspace*{\fill}
+
+
+        {\large\imprimirlocal}
+
+
+
+        {\large\imprimirdata}
+        \vspace*{1cm}
+
+
+    \end{capa}
 }
 
 % folha de rosto 
@@ -53,37 +53,36 @@
 \makeatletter
 
 \renewcommand{\folhaderostocontent}{
-  \begin{center}
-  	    \includegraphics[width=1\textwidth]{imagens/unitins}
-  	    \ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{Ç}{Ã}O
-  	    
+    \begin{center}
+        \includegraphics[width=1\textwidth]{imagens/unitins}
+        \ABNTEXchapterfont\Large   CURSO DE SISTEMAS DE INFORMA{Ç}{Ã}O
 
-     \vspace*{1cm}     
-     {\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{2cm}    }
 
-     {\large \expandafter\MakeUppercase{\imprimirautor}}
-     %\vspace*{\fill}
+        \vspace*{1cm}
+        {\ABNTEXchapterfont\bfseries\large \expandafter\MakeUppercase{\imprimirtitulo}  \vspace*{2cm}    }
 
-          \vspace*{1cm}     
-  	\hspace{.45\textwidth}
-  	\begin{minipage}{.5\textwidth}
-  	    \small\imprimirpreambulo
-  	    
-  	\end{minipage}%
-  	\vspace*{\fill}
+        {\large \expandafter\MakeUppercase{\imprimirautor}}
+        %\vspace*{\fill}
+
+        \vspace*{1cm}
+        \hspace{.45\textwidth}
+        \begin{minipage}{.5\textwidth}
+            \small\imprimirpreambulo
+
+        \end{minipage}%
+        \vspace*{\fill}
     \end{center}
-      
-  \begin{center}
-  	\vspace*{0.5cm}
-  	{\large\imprimirlocal}
 
-  	{\large\imprimirdata}
-  	\vspace*{1cm}
-  \end{center}
+    \begin{center}
+        \vspace*{0.5cm}
+        {\large\imprimirlocal}
+
+        {\large\imprimirdata}
+        \vspace*{1cm}
+    \end{center}
 }
 
 \makeatother
-
 
 
 % ---
