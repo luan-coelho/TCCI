@@ -32,37 +32,37 @@
 %Testando o git
 
 \documentclass[
-	% -- opções da classe memoir --
-	12pt,				% tamanho da fonte
-	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
-	oneside,			% para impressão em verso e anverso. Oposto a oneside
-	a4paper,			% tamanho do papel. 
-	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
-	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
-	english,			% idioma adicional para hifenização
-	brazil,				% o último idioma é o principal do documento
-	]{abntex2}
+% -- opções da classe memoir --
+    12pt,                % tamanho da fonte
+    openright,            % capítulos começam em pág ímpar (insere página vazia caso preciso)
+    oneside,            % para impressão em verso e anverso. Oposto a oneside
+    a4paper,            % tamanho do papel.
+% -- opções da classe abntex2 --
+%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+% -- opções do pacote babel --
+    english,            % idioma adicional para hifenização
+    brazil,                % o último idioma é o principal do documento
+]{abntex2}
 
 % ---
 % Pacotes básicos 
 % ---
 \usepackage{unitins}
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{lastpage}			% Usado pela Ficha catalográfica
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
+\usepackage{lmodern}            % Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}        % Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}        % Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}            % Usado pela Ficha catalográfica
+\usepackage{indentfirst}        % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}                % Controle das cores
 
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[export]{adjustbox}  % Inclusão de gráficos
 \usepackage{subfig}
-\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{microtype}            % para melhorias de justificação
 \usepackage{soul}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -75,13 +75,12 @@
 \usepackage{listings}           % Pacote para utilização de código fonte
 
 
-
 % ---
-		
+
 % ---
 % Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
 % ---
-\usepackage{lipsum}				% para geração de dummy text
+\usepackage{lipsum}                % para geração de dummy text
 % ---
 
 % ---
@@ -89,7 +88,7 @@
 % ---
 
 % \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf,abnt-etal-list=2 ]{abntex2cite}	% Citações padrão ABNT
+\usepackage[alf,abnt-etal-list=2 ]{abntex2cite}    % Citações padrão ABNT
 
 
 \usepackage[table]{xcolor}
@@ -133,10 +132,10 @@
 \data{2023}
 \orientador{Prof. Jânio Elias Teixeira Júnior}
 \instituicao{%
-  Universidade Estadual do Tocantins
-  \par
-  Curso de Sistemas de Informação
-  }
+    Universidade Estadual do Tocantins
+
+    Curso de Sistemas de Informação
+}
 \tipotrabalho{Estágio Supervisionado (Graduação)}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
@@ -155,22 +154,22 @@ do Tocantins - UNITINS, sob a Orientação do Prof. Me. Jânio Elias Teixeira Ju
 \definecolor{blue}{RGB}{41,5,195}
 
 % informações do PDF
-\makeatletter
+
 \hypersetup{
-     	%pagebackref=true,
-		pdftitle={\@title}, 
-		pdfauthor={\@author},
-    	pdfsubject={\imprimirpreambulo},
-	    pdfcreator={LaTeX with abnTeX2},
-		pdfkeywords={Algoritmo}{trabalho acadêmico}, 
-		colorlinks=true,       		% false: boxed links; true: colored links
-    	linkcolor=blue,          	% color of internal links
-    	citecolor=blue,        		% color of links to bibliography
-    	filecolor=magenta,      		% color of file links
-		urlcolor=blue,
-		bookmarksdepth=4
+%pagebackref=true,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfcreator={LaTeX with abnTeX2},
+    pdfkeywords={Algoritmo}{trabalho acadêmico},
+    colorlinks=true,            % false: boxed links; true: colored links
+    linkcolor=blue,            % color of internal links
+    citecolor=blue,                % color of links to bibliography
+    filecolor=magenta,            % color of file links
+    urlcolor=blue,
+    bookmarksdepth=4
 }
-\makeatother
+
 % --- 
 
 % --- 
@@ -192,11 +191,11 @@ do Tocantins - UNITINS, sob a Orientação do Prof. Me. Jânio Elias Teixeira Ju
 % ----
 % Início do documento
 % ----
-\usepackage{pdfpages} 
+\usepackage{pdfpages}
 \begin{document}
 
 % Retira espaço extra obsoleto entre as frases.
-\frenchspacing 
+    \frenchspacing
 
 % ----------------------------------------------------------
 % ELEMENTOS PRÉ-TEXTUAIS
@@ -205,102 +204,102 @@ do Tocantins - UNITINS, sob a Orientação do Prof. Me. Jânio Elias Teixeira Ju
 % ----------------------------------------------------------
 
 %  \pagestyle{headings}
- \pagestyle{simple}
+    \pagestyle{simple}
 
 
-\include{pre_textuais}
+    \include{pre_textuais}
 
 % ELEMENTOS TEXTUAIS
 % ---------------------------------[!htb]-------------------------
 
-\textual
+    \textual
 
 %Capitulos
-\include{c_introducao}
-\include{c_referencial}
-\include{c_metodologia}
-\include{c_conclusao}
-
+    \include{c_introducao}
+    \include{c_referencial}
+    \include{c_metodologia}
+    \include{c_conclusao}
 
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ----------------------------------------------------------
-\postextual
+    \postextual
 % ----------------------------------------------------------
 
 % ----------------------------------------------------------
 % Referências bibliográficas
 % ----------------------------------------------------------
-\bibliography{bibliografia}
-\bibliographystyle{plain}
+    \bibliographystyle{ieeetr}
+    \bibliography{bibliografia}
 
 % Apêndices
 
-\chapter{Apêncice A Prototipação}
-\label{ch:apendice}
+
+    \chapter{Apêncice A Prototipação}
+    \label{ch:apendice}
 
 %\appendix
 
-\begin{figure}[H]
-\centering
-\begin{minipage}{.3\textwidth}
-      \centering
-    \includegraphics[width=.9\linewidth]{imagens/prototipoLogin}
-    \label{fig: Tela de login}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{imagens/prototipoEsqueciSenha}
-  \label{fig: Tela esqueci minha senha}
-\end{minipage}%
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{imagens/prototipoPrimeiroAcesso}
-  \label{fig: Tela de primeira autenticação}
-\end{minipage}
-\caption{Prototipação 001}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoLogin}
+            \label{fig: Tela de login}
+        \end{minipage}
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoEsqueciSenha}
+            \label{fig: Tela esqueci minha senha}
+        \end{minipage}%
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoPrimeiroAcesso}
+            \label{fig: Tela de primeira autenticação}
+        \end{minipage}
+        \caption{Prototipação 001}
+    \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{minipage}{.3\textwidth}
-      \centering
-    \includegraphics[width=.9\linewidth]{imagens/prototipoInicio}
-    \label{fig: Tela inicial}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{imagens/prototipoProtocolos}
-  \label{fig: Tela de protocolos}
-\end{minipage}%
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{imagens/prototipoDefinicoes}
-  \label{fig: Tela de definições}
-\end{minipage}
-\caption{Prototipação 002}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoInicio}
+            \label{fig: Tela inicial}
+        \end{minipage}
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoProtocolos}
+            \label{fig: Tela de protocolos}
+        \end{minipage}%
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoDefinicoes}
+            \label{fig: Tela de definições}
+        \end{minipage}
+        \caption{Prototipação 002}
+    \end{figure}
 
-\begin{figure}[H]
-\centering
-\begin{minipage}{.3\textwidth}
-      \centering
-    \includegraphics[width=.9\linewidth]{imagens/prototipoArquivos}
-    \label{fig: Tela de arquivos}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{imagens/prototipLocais}
-  \label{fig: Tela locais}
-\end{minipage}%
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=.9\linewidth]{imagens/prototipoLocal}
-  \label{fig: Tela de detalhamento local}
-\end{minipage}
-\caption{Prototipação 003}
-\end{figure}
+    \begin{figure}[H]
+        \centering
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoArquivos}
+            \label{fig: Tela de arquivos}
+        \end{minipage}
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipLocais}
+            \label{fig: Tela locais}
+        \end{minipage}%
+        \begin{minipage}{.3\textwidth}
+            \centering
+            \includegraphics[width=.9\linewidth]{imagens/prototipoLocal}
+            \label{fig: Tela de detalhamento local}
+        \end{minipage}
+        \caption{Prototipação 003}
+    \end{figure}
 % ----------------------------------------------------------
 % Glossário
 % ----------------------------------------------------------
@@ -312,8 +311,8 @@ do Tocantins - UNITINS, sob a Orientação do Prof. Me. Jânio Elias Teixeira Ju
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %---------------------------------------------------------------------
-\phantompart
-\printindex
+    \phantompart
+    \printindex
 %---------------------------------------------------------------------
 
 \end{document}
