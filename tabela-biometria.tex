@@ -1,0 +1,25 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{lscape}
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{landscape}
+    \begin{longtable}[c]{|l|l|l|}
+        \hline
+        \multicolumn{1}{|c|}{\textbf{Característica biométrica}} & \multicolumn{1}{c|}{\textbf{Vantagem}}                   & \multicolumn{1}{c|}{\textbf{Desvantagem}}                                                                                                                                       \\ \hline
+        \endfirsthead
+%
+        \endhead
+%
+        \multirow{2}{*}{Impressões digitais}                     & Grande variedade de dispositivos.                        & \multirow{2}{*}{Alguns equipamentos detectam dedos não vivos.}                                                                                                                  \\ \cline{2-2}
+        & Redução do custo de implantação e manutenção.            &                                                                                                                                                                                 \\ \hline
+        \multirow{3}{*}{Geometria da mão}                        & Bom desempenho.                                          & \multirow{3}{*}{Não é ideal para alta frequência de acesso.}                                                                                                                    \\ \cline{2-2}
+        & Fácil de usar.                                           &                                                                                                                                                                                 \\ \cline{2-2}
+        & Facilidade de integração em outros sistemas.             &                                                                                                                                                                                 \\ \hline
+        \multirow{2}{*}{Retina}                                  & Padrões únicos da retina.                                & \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Necessidade de tirar o óculos e encostar o rosto no\\ dispositivo para olhar o feixe de luz que irá fazer a\\ leitura.\end{tabular}} \\ \cline{2-2}
+        & Bastante preciso.                                        &                                                                                                                                                                                 \\ \hline
+        \multirow{2}{*}{Iris}                                    & Não precisa de contato próximo entre o leitor e usuário. & Não possui facilidade de uso.                                                                                                                                                   \\ \cline{2-3}
+        & Desempenho superior a média.                             & Difícil integração com outros sistemas                                                                                                                                          \\ \hline
+        Reconhecimento facial                                    & Não necessita contato com o dispositivo.                 & \begin{tabular}[c]{@{}l@{}}Precisa de dispositivos com grande capacidade de\\ armazenamento.\end{tabular}                                                                       \\ \hline
+    \end{longtable}
+\end{landscape}
