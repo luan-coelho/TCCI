@@ -1,0 +1,144 @@
+@startuml
+title Diagrama de classe do backend da aplicação
+
+class User {
+    - id: Long
+    - name: String
+    - email: String
+    - cpf: String
+    - password: String
+}
+
+class Manager {
+    - id: Long
+    - createAt: LocalDate
+}
+
+class Participant {
+    - id: Long
+    - createAt: LocalDate
+}
+
+class Device {
+    - id: Long
+    - identifier: UUID
+    - name: String
+}
+
+abstract class UserFacePhoto {
+    - id: Long
+    - file: File
+    - mimeType: String
+    - fileSize: long
+    - fileName: String
+    - uploadDate: Date
+}
+
+class UsedFactor {
+     - id: Long
+}
+
+class Inscricao
+
+class LocalUserFacePhoto {
+    - filePath: String
+}
+
+class S3UserFacePhoto {
+    - bucketName: String
+    - objectKey: String
+}
+
+class AzureUserFacePhoto {
+    - containerName: String
+}
+
+class GCloudUserFacePhoto {
+    - bucketName: String
+    - objectName: String
+}
+
+class Environment {
+    - id: Long
+    - title: String
+    - description: String
+}
+
+class Event {
+    - id: Long
+    - description: String
+}
+
+class RegistrationPoint {
+    - id: Long
+    - date: LocalDate
+}
+
+class Point {
+    - id: Long
+    - initialTime: LocalTime
+    - durationInMinutes: int
+    - validated: boolean
+}
+
+class RegistroPresenca {
+    - id: Long
+    - datetime: LocalDateTime
+}
+
+abstract class Factor {
+    + void {abstract} validate()
+}
+
+class FaceRecognitionFactor {
+    - id: Long
+    + void validate()
+}
+
+class GeolocationFactor {
+    - id: Long
+    - latitude: Double
+    - longitude: Double
+    - accuracy: Float
+    - allowedRadius: Float
+    + void validate()
+}
+
+class BluetoothFactor {
+    - id: Long
+    + void validate()
+}
+
+RegistrationPoint "*" --> "1" Event
+Event "*" --> "1" Environment
+Environment "1" *-> "1" Manager
+Event "*" --> "*" Manager
+
+RegistrationPoint "1" *-down-> "*" Point
+RegistrationPoint "*" o-> "*" Factor
+
+RegistroPresenca "*" o-> "1" Participant
+RegistroPresenca "*" o-> "1" Point
+
+Factor <|-- FaceRecognitionFactor
+Factor <|-- GeolocationFactor
+Factor <|-- BluetoothFactor
+
+GeolocationFactor "*" --> "1" Manager
+BluetoothFactor "*" o-left-> "1" Device
+
+User "1" o-> "*" Device
+User "1" *-down-> "1" UserFacePhoto
+
+RegistroPresenca "1" *-> "*" UsedFactor
+UsedFactor "1" --> "1" Factor
+
+Manager "1" --> "1" User
+Participant "1" --> "1" User
+
+UserFacePhoto <|-- LocalUserFacePhoto
+UserFacePhoto <|-- S3UserFacePhoto
+UserFacePhoto <|-- AzureUserFacePhoto
+UserFacePhoto <|-- GCloudUserFacePhoto
+
+@enduml

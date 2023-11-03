@@ -6,12 +6,16 @@
 \chapter{Referencial Teórico}\label{ch:referencial_teorico}
 
 
-\section{Autenticação}\label{sec:autenticacao}
-Autenticação é o processo que verifica a autenticidade de um usuário, processo ou dispositivo.
+\section{Autenticação e Identidade}\label{sec:autenticacaoeidentidade}
+O problema de estabelecer uma associação entre um indivíduo e uma identidade pode ser dividido em duas categorias: autenticação e identificação~\cite{magalhaes2003biometria}.
+
+\subsection{Autenticação}\label{subsec:autenticacao}
+É o processo que verifica a autenticidade de um usuário, processo ou dispositivo.
 Essa verificação confirma a legitimidade da entidade em questão.
 Durante a autenticação, a parte que examina assegura que a entidade sendo verificada é genuína, e esta última participa ativamente na troca de informações~\cite{usmonov2021identification}.
 
-Para~\cite{conti2017biometric} existem três tipos de autenticação:
+
+Para~\cite{conti2017biometric} existem três tipos de autenticação\label{tipos-autenticacao}:
 
 \begin{itemize}
     \item \textbf{Baseada em conhecimento:} utiliza informações que a pessoa sabe, como uma senha.
@@ -19,13 +23,13 @@ Para~\cite{conti2017biometric} existem três tipos de autenticação:
     \item \textbf{Com base em características físicas da pessoa}, também conhecidas como biometria.
 \end{itemize}
 
-Dos tipos citados, a biometria é considerada o método mais seguro, pois suas características físicas não podem ser roubadas, emprestadas ou esquecidas.
-Forjar a autenticação biométrica é complexo e impraticável, já que mede aspectos únicos do indivíduo, como íris, retina, mão, características faciais e impressões digitais~\cite{dos2019tecnologias}.
-
 
 \section{Biometria}\label{sec:biometria}
 O termo \("\)biometria\("\) vem das palavras gregas \("\)bios\("\) (vida) e \("\)metrikos\("\) (medida)~\cite{magalhaes2003biometria}.
 É o estudo que visa identificar um indivíduo com base em suas características fisiológicas e comportamentais~\cite{handa2019comparative}, ou seja, biometria é uma forma de identificar pessoas usando características físicas ou comportamentais únicas.
+
+Dos tipos mencionados em~\ref{tipos-autenticacao}, a biometria é tida como a abordagem mais segura, já que os atributos físicos de uma pessoa não podem ser furtados, cedidos ou esquecidos.
+Falsear a autenticação biométrica é complicado e inviável, uma vez que avalia características singulares do indivíduo~\cite{dos2019tecnologias}.
 
 \subsection{Tecnologias Biométricas}\label{subsec:biometria-tecnologias}
 
@@ -43,7 +47,7 @@ Em resumo, permite o rastreamento em tempo real da localização de uma entidade
 \subsection{GPS}\label{subsec:gps}
 GPS é sigla da abreviatura de \textit{Global Positioning System}, ou Sistema de Posicionamento Global em português.
 Consiste em uma constelação de 24 satélites que orbitam a Terra a uma altitude aproximada de 20.200 km acima do nível do mar.
-Essa configuração permite que os receptores determinem sua posição em qualquer lugar do planeta com notável precisão~\cite{alves2006matematica}.
+Essa configuração permite que os receptores determinem sua posição em qualquer lugar do planeta com notável precisão~\cite{el2002introduction}.
 
 \begin{figure}[H]
     \centering
@@ -56,20 +60,14 @@ Essa configuração permite que os receptores determinem sua posição em qualqu
     \caption*{Fonte: Adaptada de~\cite{juansyah2015pembangunan}}
 \end{figure}
 
-~\cite{moura2007wbls} destaca que o GPS é o sistema de localização mais popular, cobrindo o mundo inteiro com um erro máximo de 10 metros em áreas abertas.
-Esse erro pode ser reduzido a centímetros com uso de tecnicas.
+O GPS é o sistema de localização mais popular, cobrindo o mundo inteiro com um erro máximo de 10 metros em áreas abertas.
+Esse erro pode ser reduzido a centímetros com uso de tecnicas~\cite{moura2007wbls}.
 Esse sistema avançado utiliza uma rede de estações fixas na Terra, que trabalham em conjunto com satélites.
-As estações medem a diferença de tempo de chegada dos sinais e, como suas posições são conhecidas, é possível calcular a localização exata através dessa diferença.
+As estações medem a diferença de tempo de chegada dos sinais e, como suas posições são conhecidas, é possível calcular a localização exata através dessa diferença~\cite{djuknic2001geolocation}.
 
 \subsection{Localização Indoor}\label{subsec:localizacao-indoor}
 
-Porém, essa tecnologia apresenta limitações em ambientes fechados.
+Um dos fatores que aumentam a confiabilidade da localização de uma pessoa ou objeto em um determinado local é o GPS, entretanto, como mencionado em~\ref{subsec:gps}, essa tecnologia apresenta limitações em ambientes fechados.
 Quando um receptor está em um espaço interno, torna-se muito difícil decodificar os sinais GPS, uma vez que eles são atenuados por edifícios e paredes.
 Isso resulta em perda de potência do sinal e, consequentemente, em erros na localização do receptor.
-
-
-Um dos fatores que aumentam a confiabilidade da localização de uma pessoa em um determinado local é o GPS. No entanto, o GPS possui limitações em relação à precisão, tornando-o inadequado para uso em ambientes internos, como salas de aula.
-Nesse contexto, existe a tecnologia de localização indoor, projetada para localizar pessoas em ambientes fechados~\cite{mittelstadt2018bluepath}.
-
-
-
+Nesse contexto, existe a tecnologia de localização indoor, projetada para localizaço em ambientes fechados, como andares de prédios, tuneis, salas ou auditórios~\cite{mittelstadt2018bluepath}.
