@@ -50,7 +50,7 @@ Em resumo, permite o rastreamento em tempo real da localização de uma entidade
 O GPS consiste em uma constelação de 24 satélites que orbitam a Terra a uma altitude aproximada de 20.200 km acima do nível do mar.
 Essa configuração permite que os~\hyperlink{receptores}{receptores} determinem sua posição em qualquer lugar do planeta com notável precisão~\cite{el2002introduction}.
 
-\subsection{Localização Indoor}\label{subsec:localizacao-indoor}
+\subsection{Localização Interna - (Indoor)}\label{subsec:localizacao-indoor}
 
 É uma tecnologia projetada para localização em ambientes internos, como andares de prédios, tuneis, salas ou auditórios~\cite{mittelstadt2018bluepath}.
 Um dos fatores que aumentam a confiabilidade da localização de uma pessoa ou objeto em um determinado local é o GPS, entretanto essa tecnologia apresenta melhor desempenho em ambientes abertos, tendo uma grande imprecisão em ambientes fechados.
@@ -60,12 +60,25 @@ Isso resulta em perda de potência do sinal e, consequentemente, em erros na loc
 Nesse contexto, existe a localização indoor~\cite{mittelstadt2018bluepath}.
 
 \subsubsection{Tecnologias de Localização Indoor}\label{subsubsec:tecnologias-localizacao-indoor}
-Conforme o entendimento de Filho~\cite{mittelstadt2018bluepath} as tecnologias de localização indoor geralmente são sem fio, visando uma maior aceitação dos usuários, pois andar com cabos para se localizar em um ambiente não é conveniente.
+Conforme o entedimento de~\cite{novais2014localizaccao} em sua tese de mestrado \("\)Localização Indoor em Ambientes Inteligentes\("\), ele que explica que as tecnologias de localização indoor geralmente são sem fio, visando uma maior aceitação dos usuários, pois andar com cabos para se localizar em um ambiente não é conveniente.
 Dessa forma, as tecnologias wireless proporcionam mais conforto, comodidade e segurança.
-Há várias maneiras de prover a localização em ambientes internos, algumas serão explicadas a seguir.
+Há várias maneiras de prover a localização em ambientes internos, algumas serão explicadas a aseguir conforme o autor.
+
+\subsubsubsection{Wi-Fi}\label{subsubsubsec:wifi}
+A Wi-Fi (Wireless Fidelity) foi estabelecida em 1999 pela Interbrand\footnote{\url{https://interbrand.com/}} para a Wi-Fi Alliance\footnote{\url{https://www.wi-fi.org/}}, que visa assegurar a compatibilidade entre dispositivos Wi-Fi. Utiliza a norma IEEE 802.11, com acréscimos como os padrões 802.11b/g/n/ac, e permite comunicação entre dispositivos através de ondas de rádio acima de 2.4 GHz. Os pontos de acesso conectam vários dispositivos sem fio e podem comunicar entre si, com alcance de aproximadamente 35 metros em ambientes internos e 110 metros em externos.
+A prevalência de redes Wi-Fi em locais públicos e privados facilitou sua adoção em sistemas de localização indoor.
+Esses sistemas são específicos para cada edifício e podem guiar pessoas ou robôs com dispositivos móveis Wi-Fi. A precisão aumenta ao limitar as possíveis posições dos dispositivos e fornecer plantas dos locais para reduzir distorções de sinal.
+Os sistemas de localização podem operar nos próprios dispositivos (localização implícita) ou em servidores (localização explícita).
+A configuração envolve uma fase de treino, coletando intensidade do sinal Wi-Fi e identificadores SSID, e uma fase online que compara os dados recebidos com os mapas de rádio para determinar a posição do dispositivo via técnicas de localização determinísticas ou probabilísticas.
 
 \subsubsubsection{ZigBee}\label{subsubsubsec:zigbee}
-Em sua tese de mestrado \("\)Localização Indoor em Ambientes Inteligentes\("\)~\cite{novais2014localizaccao} explica que ZigBee é um conjunto de protocolos de comunicação de baixa taxa de dados para conexão sem fio de curto alcance, baseado no padrão \textit{IEEE 802.15.4} (É um padrão para redes sem fio de baixo consumo de energia e baixa velocidade de dados, usado em \textit{IoT}) e desenvolvido pela Connectivity Standards Alliance (CSA) (anteriormente conhecida como ZigBee Alliance), uma organização sem fins lucrativos.
+ZigBee é um conjunto de protocolos de comunicação de baixa taxa de dados para conexão sem fio de curto alcance, baseado no padrão \textit{IEEE 802.15.4} (É um padrão para redes sem fio de baixo consumo de energia e baixa velocidade de dados, usado em \textit{IoT}) e desenvolvido pela Connectivity Standards Alliance (CSA) \footnote{\url{https://csa-iot.org/}} (anteriormente conhecida como ZigBee Alliance), uma organização sem fins lucrativos.
 A tecnologia é econômica e de baixo consumo energético, ideal para automação residencial e monitoramento, mas também é aplicável em localização indoor.
 Funciona com rádio frequência e requer a posição conhecida de emissores no ambiente para localizar objetos ou dispositivos através da comunicação entre os emissores.
 
+\subsubsubsection{RFID}\label{subsubsubsec:rfid}
+A tecnologia RFID (Radio-Frequency Identification) é usada para armazenar e recuperar dados por meio de transmissão eletromagnética.
+O RFID permite identificar e rastrear itens e foi precursor dos sistemas modernos ao identificar aviões amigos ou inimigos.
+Um sistema RFID inclui leitores e etiquetas, que comunicam usando frequência de rádio.
+Etiquetas passivas não têm bateria e refletem o sinal do leitor com informações moduladas, enquanto etiquetas ativas têm alcance maior, até 100 metros, e são mais rápidas, sendo lidas em menos de 100 milissegundos.
+Para localização indoor, RFID é mais complexo, geralmente utilizando o dispositivo móvel como leitor e etiquetas distribuídas como pontos de referência para estimar a localização através do sinal de força recebido (RSSI), exigindo que o edifício seja dividido em zonas para essa finalidade.
