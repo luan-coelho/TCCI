@@ -39,35 +39,33 @@ Falsear a autenticação biométrica é complicado e inviável, uma vez que aval
 \input{tabelas/t2-problemas-reconhecimento-facial}
 
 
-\section{Geolocalização}\label{sec:geolocalizacao}
+\section{Localização Exterior - GPS}\label{sec:localizacao}
+GPS é a sigla da abreviatura de \textit{Global Positioning System}, ou Sistema de Posicionamento Global em português~\cite{gpsdesigning}.
+Também chamado de NAVSTAR-GPS (Sistema de Navegação por Satélites com Tempo e Distância), é um sistema de navegação por rádio criado pelo Departamento de Defesa dos EUA. Foi criado originalmente para a navegação militar americana~\cite{novais2014localizaccao}.
+
 É o método de identificar a posição geográfica de um objeto, pessoa ou dispositivo eletrônico.
-Para isso, utiliza-se de informações provenientes de sinais de \textit{GPS}, torres de celular, endereços \textit{IP} ou redes  \textit{Wi-Fi}.
+Para isso, utiliza-se de informações provenientes de sinais de \hypertarget{receptores}{ \textit{GPS}, torres de celular, endereços \textit{IP} ou redes  \textit{Wi-Fi}}.
 Em resumo, permite o rastreamento em tempo real da localização de uma entidade~\cite{da2019sistemas}.
 
-\subsection{GPS}\label{subsec:gps}
-GPS é sigla da abreviatura de \textit{Global Positioning System}, ou Sistema de Posicionamento Global em português.
-Consiste em uma constelação de 24 satélites que orbitam a Terra a uma altitude aproximada de 20.200 km acima do nível do mar.
-Essa configuração permite que os receptores determinem sua posição em qualquer lugar do planeta com notável precisão~\cite{el2002introduction}.
-
-\begin{figure}[H]
-    \centering
-    \caption{Fonte: Sistema de Posicionamento Global (GPS)}
-    \begin{minipage}{.9\textwidth}
-        \centering
-        \includegraphics[width=.9\linewidth]{imagens/sistema-gps}
-        \label{fig: Sistema de GPS}
-    \end{minipage}
-    \caption*{Fonte: Adaptada de~\cite{juansyah2015pembangunan}}
-\end{figure}
-
-O GPS é o sistema de localização mais popular, cobrindo o mundo inteiro com um erro máximo de 10 metros em áreas abertas.
-Esse erro pode ser reduzido a centímetros com uso de tecnicas~\cite{moura2007wbls}.
-Esse sistema avançado utiliza uma rede de estações fixas na Terra, que trabalham em conjunto com satélites.
-As estações medem a diferença de tempo de chegada dos sinais e, como suas posições são conhecidas, é possível calcular a localização exata através dessa diferença~\cite{djuknic2001geolocation}.
+O GPS consiste em uma constelação de 24 satélites que orbitam a Terra a uma altitude aproximada de 20.200 km acima do nível do mar.
+Essa configuração permite que os~\hyperlink{receptores}{receptores} determinem sua posição em qualquer lugar do planeta com notável precisão~\cite{el2002introduction}.
 
 \subsection{Localização Indoor}\label{subsec:localizacao-indoor}
 
-Um dos fatores que aumentam a confiabilidade da localização de uma pessoa ou objeto em um determinado local é o GPS, entretanto, como mencionado em~\ref{subsec:gps}, essa tecnologia apresenta limitações em ambientes fechados.
+É uma tecnologia projetada para localização em ambientes internos, como andares de prédios, tuneis, salas ou auditórios~\cite{mittelstadt2018bluepath}.
+Um dos fatores que aumentam a confiabilidade da localização de uma pessoa ou objeto em um determinado local é o GPS, entretanto essa tecnologia apresenta melhor desempenho em ambientes abertos, tendo uma grande imprecisão em ambientes fechados.
+
 Quando um receptor está em um espaço interno, torna-se muito difícil decodificar os sinais GPS, uma vez que eles são atenuados por edifícios e paredes.
 Isso resulta em perda de potência do sinal e, consequentemente, em erros na localização do receptor.
-Nesse contexto, existe a tecnologia de localização indoor, projetada para localizaço em ambientes fechados, como andares de prédios, tuneis, salas ou auditórios~\cite{mittelstadt2018bluepath}.
+Nesse contexto, existe a localização indoor~\cite{mittelstadt2018bluepath}.
+
+\subsubsection{Tecnologias de Localização Indoor}\label{subsubsec:tecnologias-localizacao-indoor}
+Conforme o entendimento de Filho~\cite{mittelstadt2018bluepath} as tecnologias de localização indoor geralmente são sem fio, visando uma maior aceitação dos usuários, pois andar com cabos para se localizar em um ambiente não é conveniente.
+Dessa forma, as tecnologias wireless proporcionam mais conforto, comodidade e segurança.
+Há várias maneiras de prover a localização em ambientes internos, algumas serão explicadas a seguir.
+
+\subsubsubsection{ZigBee}\label{subsubsubsec:zigbee}
+Em sua tese de mestrado \("\)Localização Indoor em Ambientes Inteligentes\("\)~\cite{novais2014localizaccao} explica que ZigBee é um conjunto de protocolos de comunicação de baixa taxa de dados para conexão sem fio de curto alcance, baseado no padrão \textit{IEEE 802.15.4} (É um padrão para redes sem fio de baixo consumo de energia e baixa velocidade de dados, usado em \textit{IoT}) e desenvolvido pela Connectivity Standards Alliance (CSA) (anteriormente conhecida como ZigBee Alliance), uma organização sem fins lucrativos.
+A tecnologia é econômica e de baixo consumo energético, ideal para automação residencial e monitoramento, mas também é aplicável em localização indoor.
+Funciona com rádio frequência e requer a posição conhecida de emissores no ambiente para localizar objetos ou dispositivos através da comunicação entre os emissores.
+
