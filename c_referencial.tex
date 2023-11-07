@@ -34,10 +34,22 @@ Falsear a autenticação biométrica é complicado e inviável, uma vez que aval
 \subsection{Tecnologias Biométricas}\label{subsec:biometria-tecnologias}
 
 \subsubsection{Reconhecimento facial}\label{subsubsec:reconhecimento-facial}
-É uma tecnologia capaz de identificar uma pessoa a partir de uma imagem digital ou de um vídeo, de modo que é comparado as características faciais selecionadas de uma determinada imagem com os rostos existentes num banco de dados~\cite{orvalho2019reconhecimento}.
+É uma tecnologia capaz de identificar uma pessoa a partir de uma imagem digital ou de um vídeo, de modo que é comparado as características faciais selecionadas de uma determinada imagem com os rostos existentes numa base de dados~\cite{orvalho2019reconhecimento}.
+Essas características incluem a distância entre os olhos, largura do nariz, posição das maçãs do rosto, linha da mandíbula, queixo, entre outras~\cite{adeoye2010survey}.
+%O rosto não possui tantos traços únicos mensuráveis quanto impressões digitais ou íris dos olhos, o que faz com que a confiabilidade do reconhecimento facial seja levemente inferior a desses outros métodos biométricos.
+%
+%No entanto, ainda é adequado para muitas aplicações, especialmente pela sua conveniência para o usuário.
+%O reconhecimento facial também pode ser utilizado em conjunto com o reconhecimento de impressões digitais ou outro método biométrico para desenvolver aplicações com necessidades de segurança mais críticas
 
-\input{tabelas/t2-problemas-reconhecimento-facial}
+%\input{tabelas/t2-problemas-reconhecimento-facial}
 
+\subsubsection{Reconhecimento da Geometria da Mão}\label{subsubsec:geometria-mao}
+O reconhecimento da geometria da mão se dá pela análise de características específicas como forma, comprimento dos dedos e linhas distintas.
+A segurança deste sistema pode variar dependendo do uso dessas características isoladamente, da sua posição em relação a um ponto fixo ou pela associação de vários pontos e respectivas distâncias a esses características~\cite{magalhaes2003biometria}.
+
+É importante notar que, conforme os estudos~\cite{magalhaes2003biometria}, não há evidências de que a geometria da mão, conforme interpretada pelos algoritmos atuais, seja exclusiva a cada pessoa.
+Além disso, em comparação com outras medidas biométricas, a geometria da mão gera um volume menor de dados.
+Isso significa que, em uma base de dados ampla, pode ser difícil distinguir indivíduos com características manuais muito similares usando somente a geometria da mão.
 
 \section{Localização Exterior - GPS}\label{sec:localizacao}
 GPS é a sigla da abreviatura de \textit{Global Positioning System}, ou Sistema de Posicionamento Global em português~\cite{gpsdesigning}.
