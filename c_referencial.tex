@@ -62,6 +62,7 @@ Este padrão é estável e inalterado do nascimento até a morte, exceto em caso
 A imagem da retina é capturada usando luz infravermelha, e as características vasculares são mapeadas e armazenadas para identificação futura.
 Devido à sua alta precisão e baixa taxa de falsos positivos, a biometria de retina é frequentemente utilizada em ambientes que requerem segurança extremamente alta, como instalações militares, nucleares e para transações bancárias de grande valor~\cite{de2020biometria}.
 
+
 \section{Localização Exterior - GPS}\label{sec:localizacao}
 GPS é a sigla da abreviatura de \textit{Global Positioning System}, ou Sistema de Posicionamento Global em português~\cite{gpsdesigning}.
 Também chamado de NAVSTAR-GPS (Sistema de Navegação por Satélites com Tempo e Distância), é um sistema de navegação por rádio criado pelo Departamento de Defesa dos EUA. Foi criado originalmente para a navegação militar americana~\cite{novais2014localizaccao}.
@@ -109,3 +110,56 @@ Um sistema RFID inclui leitores e etiquetas, que comunicam usando frequência de
 Etiquetas passivas não têm bateria e refletem o sinal do leitor com informações moduladas, enquanto etiquetas ativas têm alcance maior, até 100 metros, e são mais rápidas, sendo lidas em menos de 100 milissegundos.
 
 Para localização indoor, RFID é mais complexo, geralmente utilizando o dispositivo móvel como leitor e etiquetas distribuídas como pontos de referência para estimar a localização através do sinal de força recebido (RSSI), exigindo que o edifício seja dividido em zonas para essa finalidade.
+
+
+\section{Tecnologias}\label{sec: tecnologias}
+
+\subsection{Flutter}\label{subsec: flutter}
+O Flutter é uma estrutura multiplataforma destinada ao desenvolvimento de aplicações móveis de alto desempenho.
+Lançado publicamente em 2016 pela Google, ele se destaca por sua capacidade de executar aplicações não apenas em sistemas Android e iOS, mas também no Linux, macOS, Windows e Fuschia, o sistema operacional de próxima geração da Google, que o selecionou como seu framework no nível de aplicação~\cite{wu2018react}.
+
+Conforme na Figura~\ref{fig:architecture} a particularidade do Flutter reside em sua abordagem de renderização: em vez de usar web views ou depender de widgets OEM do dispositivo, o Flutter utiliza seu próprio motor de renderização de alto desempenho para desenhar todos os componentes da interface do usuário.
+Essa característica permite a criação de aplicações com desempenho comparável ao das aplicações nativas.
+Em termos de arquitetura, o código do motor escrito em C/C++ é compilado com o NDK do Android e com LLVM no iOS, enquanto qualquer código Dart é compilado antecipadamente (AOT) em código nativo durante o processo de compilação~\cite{flutter}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagens/flutter_architecture}
+    \caption{Visão geral da arquitetura do Flutter~\cite{flutter}.}
+    \label{fig:architecture}
+\end{figure}
+
+Além disso, o Flutter oferece suporte ao ~\textit{hot-reload} com estado (stateful hot-reload) durante o desenvolvimento, uma funcionalidade considerada fundamental para acelerar o ciclo de desenvolvimento~\cite{wu2018react}.
+O ~\textit{hot-reload} com estado é implementado pela injeção de código-fonte atualizado na Dart VM em execução, sem alterar a estrutura interna da aplicação, o que significa que todas as transições e ações são preservadas após o hot-reloading~\cite{flutter}.
+
+\subsection{Dart}\label{subsec: dart}
+No Flutter, todas as aplicações são escritas utilizando a linguagem de programação Dart.
+Dart é desenvolvida e mantida pela Google e tem sido amplamente usada dentro da própria empresa, demonstrando sua capacidade de desenvolver aplicações web em larga escala, como é o caso do AdWords.
+A Dart foi originalmente criada para substituir e suceder o JavaScript, incorporando a maioria das características importantes da próxima norma do JavaScript (ES7), incluindo palavras-chave como “async” e “await”.
+Para tornar a linguagem atraente também para desenvolvedores que não estão familiarizados com JavaScript, a Dart possui uma sintaxe semelhante à do Java.
+
+Assim como outros sistemas que utilizam visualizações reativas, as aplicações Flutter atualizam a árvore de visualização a cada novo quadro (frame).
+Esse comportamento resulta no desafio de gerar muitos objetos que podem existir apenas durante um único quadro.
+Para lidar com isso, a Dart, como uma linguagem de programação moderna, está otimizada para gerenciar este cenário no nível da memória, com o auxílio do “Garbage Collection Geracional”.
+Essa técnica de coleta de lixo ajuda a gerenciar a memória de forma eficiente, garantindo que os objetos de curta duração sejam coletados rapidamente, o que é crucial para manter o desempenho em um ambiente onde o estado da interface do usuário pode mudar rapidamente~\cite{flutter}.
+
+\subsection{Widgets}\label{subsec: widgets}
+Os Widgets são elementos centrais em uma aplicação Flutter, responsáveis por serem atraentes e funcionais, pois são a interface com a qual o usuário interage diretamente.
+Eles não só controlam e afetam o comportamento das visualizações, mas também gerenciam e respondem às ações dos usuários~\cite{wu2018react}.
+É fundamental que os Widgets sejam rápidos, tanto na renderização quanto na animação.
+
+Diferentemente do React Native, que reutiliza os widgets OEM, a equipe do Flutter optou por fornecer seus próprios widgets.
+Isso significa que o Flutter decide quando e como os widgets são renderizados, deslocando os widgets e o motor de renderização do sistema operacional para dentro da própria aplicação.
+Esse método permite maior personalização e extensibilidade dos widgets.
+No entanto, essa abordagem aumenta o tamanho da aplicação devido à inclusão do motor de renderização~\cite{flutter}.
+
+\subsection{Quarkus}\label{subsec: quarkus}
+~\cite{vsipek2020enhancing} descreve que Quarkus é um framework Java nativo para Kubernetes que foi projetado para otimizar aplicações javas tanto para a JVM quanto para o GraalVM, reduzindo o uso de memória e facilitando a criação de imagens nativas.
+Oferece um ambiente de desenvolvimento que detecta automaticamente mudanças e atualiza a aplicação em tempo real, aumentando a produtividade do desenvolvedor.
+Inclui o servidor web Undertow para melhor desempenho e suporta programação assíncrona e microserviços.
+Quarkus prioriza segurança, permitindo extensões para práticas recomendadas e integração com provedores terceirizados para autenticação e gerenciamento de usuários.
+Utiliza tecnologias estáveis como Hibernate ORM, Eclipse Vert.x, Netty e RestEasy, proporcionando uma configuração unificada e recarga rápida, sendo uma plataforma robusta para aplicações Java em ambientes serverless.
+
+
+
+
