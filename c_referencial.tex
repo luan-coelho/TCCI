@@ -49,7 +49,7 @@ Essas características, conhecidas como minúcias, incluem padrões de cristas e
 A tecnologia de identificação por impressão digital utiliza algoritmos para comparar as minúcias de uma amostra com as registradas em um banco de dados~\cite{de2020biometria}.
 
 \subsubsection{Íris}\label{subsubsec:iris}
-A biometria de íris é uma técnica de identificação baseada nas características únicas e estáveis da íris, que é o músculo responsável pela cor dos olhos.
+A biometria de íris é uma técnica de identificação baseada nas características únicas e estáveis da íris, o músculo responsável pela cor dos olhos.
 Apresentando padrões complexos que diferem entre indivíduos e até entre os olhos esquerdo e direito de uma mesma pessoa, a íris é escaneada usando câmeras sensíveis ao infravermelho.
 As imagens capturadas são codificadas e armazenadas para comparações futuras~\cite{de2020biometria}.
 
@@ -61,6 +61,9 @@ Este padrão é estável e inalterado do nascimento até a morte, exceto em caso
 
 A imagem da retina é capturada usando luz infravermelha, e as características vasculares são mapeadas e armazenadas para identificação futura.
 Devido à sua alta precisão e baixa taxa de falsos positivos, a biometria de retina é frequentemente utilizada em ambientes que requerem segurança extremamente alta, como instalações militares, nucleares e para transações bancárias de grande valor~\cite{de2020biometria}.
+
+
+\section{Reconhecimento Facial}\label{sec:reconhecimento-facial}
 
 
 \section{Localização Exterior - GPS}\label{sec:localizacao}
@@ -89,7 +92,7 @@ Dessa forma, as tecnologias wireless proporcionam mais conforto, comodidade e se
 Há várias maneiras de prover a localização em ambientes internos, algumas serão explicadas a seguir conforme o autor.
 
 \subsubsubsection{Wi-Fi}\label{subsubsubsec:wifi}
-A Wi-Fi (Wireless Fidelity) foi estabelecida em 1999 pela Interbrand\footnote{\url{https://interbrand.com/}} para a Wi-Fi Alliance\footnote{\url{https://www.wi-fi.org/}}, que visa assegurar a compatibilidade entre dispositivos Wi-Fi. Utiliza a norma IEEE 802.11, com acréscimos como os padrões 802.11b/g/n/ac, e permite comunicação entre dispositivos através de ondas de rádio acima de 2.4 GHz. Os pontos de acesso conectam vários dispositivos sem fio e podem comunicar entre si, com alcance de aproximadamente 35 metros em ambientes internos e 110 metros em externos.
+A Wi-Fi (Wireless Fidelity) foi estabelecida em 1999 pela Interbrand\footnote{\url{https://interbrand.com/}} para a Wi-Fi Alliance\footnote{\url{https://www.wi-fi.org/}}, que visa assegurar a compatibilidade entre dispositivos Wi-Fi. Utiliza a norma IEEE 802.11, com acréscimos como os padrões 802.11b/g/n/ac, e permite comunicação entre dispositivos por ondas de rádio acima de 2.4 GHz. Os pontos de acesso conectam vários dispositivos sem fio e podem comunicar entre si, com alcance de aproximadamente 35 metros em ambientes internos e 110 metros em externos.
 
 A prevalência de redes Wi-Fi em locais públicos e privados facilitou sua adoção em sistemas de localização indoor.
 Esses sistemas são específicos para cada edifício e podem guiar pessoas ou robôs com dispositivos móveis Wi-Fi. A precisão aumenta ao limitar as possíveis posições dos dispositivos e fornecer plantas dos locais para reduzir distorções de sinal.
@@ -134,18 +137,18 @@ O ~\textit{hot-reload} com estado é implementado pela injeção de código-font
 
 \subsection{Dart}\label{subsec: dart}
 No Flutter, todas as aplicações são escritas utilizando a linguagem de programação Dart.
-Dart é desenvolvida e mantida pela Google e tem sido amplamente usada dentro da própria empresa, demonstrando sua capacidade de desenvolver aplicações web em larga escala, como é o caso do AdWords.
+Dart é desenvolvida e mantida pela Google e tem sido amplamente usada dentro da própria empresa, demonstrando sua capacidade de desenvolver aplicações web em larga escala, como no AdWords.
 A Dart foi originalmente criada para substituir e suceder o JavaScript, incorporando a maioria das características importantes da próxima norma do JavaScript (ES7), incluindo palavras-chave como “async” e “await”.
 Para tornar a linguagem atraente também para desenvolvedores que não estão familiarizados com JavaScript, a Dart possui uma sintaxe semelhante à do Java.
 
 Assim como outros sistemas que utilizam visualizações reativas, as aplicações Flutter atualizam a árvore de visualização a cada novo quadro (frame).
 Esse comportamento resulta no desafio de gerar muitos objetos que podem existir apenas durante um único quadro.
-Para lidar com isso, a Dart, como uma linguagem de programação moderna, está otimizada para gerenciar este cenário no nível da memória, com o auxílio do “Garbage Collection Geracional”.
+Para lidar com isso, o Dart, como uma linguagem de programação moderna, está otimizada para gerenciar este cenário no nível da memória, com o auxílio do “Garbage Collection Geracional”.
 Essa técnica de coleta de lixo ajuda a gerenciar a memória de forma eficiente, garantindo que os objetos de curta duração sejam coletados rapidamente, o que é crucial para manter o desempenho em um ambiente onde o estado da interface do usuário pode mudar rapidamente~\cite{flutter}.
 
 \subsection{Widgets}\label{subsec: widgets}
 Os Widgets são elementos centrais em uma aplicação Flutter, responsáveis por serem atraentes e funcionais, pois são a interface com a qual o usuário interage diretamente.
-Eles não só controlam e afetam o comportamento das visualizações, mas também gerenciam e respondem às ações dos usuários~\cite{wu2018react}.
+Eles não só controlam e afetam o comportamento das visualizações, mas também gerenciam e respondem às ações dos usuários~\cite{faust2020using}.
 É fundamental que os Widgets sejam rápidos, tanto na renderização quanto na animação.
 
 Diferentemente do React Native, que reutiliza os widgets OEM, a equipe do Flutter optou por fornecer seus próprios widgets.

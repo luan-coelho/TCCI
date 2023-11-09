@@ -1,144 +1,136 @@
 @startuml
-title Diagrama de classe do backend da aplicação
+title Diagrama de classe do backend da aplicacao
 
-class User {
+class Usuario {
     - id: Long
-    - name: String
+    - nome: String
     - email: String
     - cpf: String
-    - password: String
+    - senha: String
 }
 
-class Manager {
+class Administrador {
     - id: Long
-    - createAt: LocalDate
+    - dataCriacao: LocalDate
 }
 
-class Participant {
+class Participante {
     - id: Long
-    - createAt: LocalDate
+    - dataCriacao: LocalDate
 }
 
-class Device {
+class Dispositivo {
     - id: Long
-    - identifier: UUID
-    - name: String
+    - identificadorBluetooth: UUID
+    - nome: String
 }
 
-abstract class UserFacePhoto {
+abstract class FotoRostoUsuario {
     - id: Long
-    - file: File
-    - mimeType: String
-    - fileSize: long
-    - fileName: String
-    - uploadDate: Date
+    - arquivo: File
+    - tipoMime: String
+    - tamanhoArquivo: long
+    - nomeArquivo: String
+    - dataUpload: Date
 }
 
-class UsedFactor {
+class FatorUsado {
      - id: Long
 }
 
-class Inscricao
-
-class LocalUserFacePhoto {
-    - filePath: String
+class FotoRostoUsuarioLocal {
+    - caminhoArquivo: String
 }
 
-class S3UserFacePhoto {
-    - bucketName: String
-    - objectKey: String
+class FotoRostoUsuarioS3 {
+    - nomeBucket: String
+    - chaveObjeto: String
 }
 
-class AzureUserFacePhoto {
-    - containerName: String
+class FotoRostoUsuarioAzure {
+    - nomeContainer: String
 }
 
-class GCloudUserFacePhoto {
-    - bucketName: String
-    - objectName: String
+class FotoRostoUsuarioGCloud {
+    - nomeBucket: String
+    - nomeObjeto: String
 }
 
-class Environment {
+class Ambiente {
     - id: Long
-    - title: String
-    - description: String
+    - título: String
+    - descricao: String
 }
 
-class Event {
+class Evento {
     - id: Long
-    - description: String
+    - descricao: String
+    - latitude: Double
+    - longitude: Double
 }
 
-class RegistrationPoint {
+class RegistroPonto {
     - id: Long
-    - date: LocalDate
+    - data: LocalDate
 }
 
-class Point {
+class Ponto {
     - id: Long
-    - initialTime: LocalTime
-    - durationInMinutes: int
-    - validated: boolean
+    - horarioInicial: LocalTime
+    - duracaoEmMinutos: int
+    - validado: boolean
 }
 
 class RegistroPresenca {
     - id: Long
-    - datetime: LocalDateTime
+    - dataHora: LocalDateTime
 }
 
-abstract class Factor {
-    + void {abstract} validate()
+abstract class Fator {
+    + void {abstract} validar()
 }
 
-class FaceRecognitionFactor {
+class FatorReconhecimentoFacial {
     - id: Long
-    + void validate()
+    + void validar()
 }
 
-class GeolocationFactor {
+class LocalizacaoIndoor {
     - id: Long
     - latitude: Double
     - longitude: Double
-    - accuracy: Float
-    - allowedRadius: Float
-    + void validate()
+    - raioPermitido: Float
+    + void validar()
 }
 
-class BluetoothFactor {
-    - id: Long
-    + void validate()
-}
+RegistroPonto "*" --> "1" Evento
+Evento "*" --> "1" Ambiente
+Ambiente "1" *-> "1" Administrador
+Evento "*" --> "*" Administrador
 
-RegistrationPoint "*" --> "1" Event
-Event "*" --> "1" Environment
-Environment "1" *-> "1" Manager
-Event "*" --> "*" Manager
+RegistroPonto "1" *-> "*" Ponto
+RegistroPonto "*" o-> "*" Fator
 
-RegistrationPoint "1" *-down-> "*" Point
-RegistrationPoint "*" o-> "*" Factor
+RegistroPresenca "*" o-> "1" Participante
+RegistroPresenca "*" o-> "1" Ponto
 
-RegistroPresenca "*" o-> "1" Participant
-RegistroPresenca "*" o-> "1" Point
+Fator <|-- FatorReconhecimentoFacial
+Fator <|-- LocalizacaoIndoor
 
-Factor <|-- FaceRecognitionFactor
-Factor <|-- GeolocationFactor
-Factor <|-- BluetoothFactor
+LocalizacaoIndoor "*" o-> "1" Dispositivo
 
-GeolocationFactor "*" --> "1" Manager
-BluetoothFactor "*" o-left-> "1" Device
+Usuario "1" o-> "*" Dispositivo
+Usuario "1" *-down-> "1" FotoRostoUsuario
 
-User "1" o-> "*" Device
-User "1" *-down-> "1" UserFacePhoto
+RegistroPresenca "1" *-> "*" FatorUsado
+FatorUsado "1" --> "1" Fator
 
-RegistroPresenca "1" *-> "*" UsedFactor
-UsedFactor "1" --> "1" Factor
+Administrador "1" --> "1" Usuario
+Participante "1" --> "1" Usuario
 
-Manager "1" --> "1" User
-Participant "1" --> "1" User
-
-UserFacePhoto <|-- LocalUserFacePhoto
-UserFacePhoto <|-- S3UserFacePhoto
-UserFacePhoto <|-- AzureUserFacePhoto
-UserFacePhoto <|-- GCloudUserFacePhoto
+FotoRostoUsuario <|-- FotoRostoUsuarioLocal
+FotoRostoUsuario <|-- FotoRostoUsuarioS3
+FotoRostoUsuario <|-- FotoRostoUsuarioAzure
+FotoRostoUsuario <|-- FotoRostoUsuarioGCloud
 
 @enduml
