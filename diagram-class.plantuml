@@ -22,7 +22,7 @@ class Participante {
 class Dispositivo {
     - id: Long
     - identificadorBluetooth: UUID
-    - nome: String
+    - descricao: String
 }
 
 abstract class FotoRostoUsuario {
@@ -58,16 +58,21 @@ class FotoRostoUsuarioGCloud {
 
 class Ambiente {
     - id: Long
-    - título: String
+    - titulo: String
     - descricao: String
 }
 
 class Evento {
     - id: Long
     - descricao: String
+}
+
+class Localizacao {
+    - id: Long
     - latitude: Double
     - longitude: Double
 }
+
 
 class RegistroPonto {
     - id: Long
@@ -77,7 +82,7 @@ class RegistroPonto {
 class Ponto {
     - id: Long
     - horarioInicial: LocalTime
-    - duracaoEmMinutos: int
+    - duracaoValidadeEmMinutos: int
     - validado: boolean
 }
 
@@ -97,9 +102,7 @@ class FatorReconhecimentoFacial {
 
 class LocalizacaoIndoor {
     - id: Long
-    - latitude: Double
-    - longitude: Double
-    - raioPermitido: Float
+    - raioPermitidoEmMetros: Float
     + void validar()
 }
 
@@ -107,6 +110,7 @@ RegistroPonto "*" --> "1" Evento
 Evento "*" --> "1" Ambiente
 Ambiente "1" *-> "1" Administrador
 Evento "*" --> "*" Administrador
+Evento "1" --> "1" Localizacao
 
 RegistroPonto "1" *-> "*" Ponto
 RegistroPonto "*" o-> "*" Fator
